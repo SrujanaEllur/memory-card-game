@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.game-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.card {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #000;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+.card.flipped, .card.matched {
+    background-color: #fff;
+    background-size: cover;
+}
+
+.hidden {
+    display: none;
+}
+
+.matched {
+    cursor: default;
+    border: 1px solid #4caf50;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+#congratulations {
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (min-width: 320px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (min-width: 480px) {
+    .game-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    .game-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        width: 150px;
+        height: 150px;
+    }
+}
